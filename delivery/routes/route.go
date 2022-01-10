@@ -9,4 +9,5 @@ import (
 func RegisterPath(e *echo.Echo, uc *user.UserController) {
 	e.Pre(middleware.RemoveTrailingSlash())
 	e.POST("/users", uc.Register())
+	e.POST("/users/login", uc.Login())
 }
